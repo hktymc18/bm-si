@@ -3,241 +3,419 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0f1f3d">
+<meta name="theme-color" content="#141519">
 <meta property="og:type" content="website">
 <meta property="og:title" content="株式会社BM">
 <meta property="og:description" content="株式会社BMの公式サイトです。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231c3360'/%3E%3Ctext x='16' y='21' font-family='Arial,sans-serif' font-weight='800' font-size='13' fill='white' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
-<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%23F2804A'/%3E%3Cpath d='M12 30h16M20 30V17M20 21l-7-7M20 21l7-7M20 15l3-3-3-3-3 3z' stroke='%23141519' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <title>株式会社BM</title>
 <meta name="description" content="株式会社BMの公式サイトです。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Manrope:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=M+PLUS+Rounded+1c:wght@700;900&family=Noto+Sans+JP:wght@400;500;700&family=Yuji+Boku&display=swap">
 <style>
-/* Layout: 藍の表紙（麻の葉文様）＋白地に3つの情報だけ。各セクションは左に縦書きの見出し札、右に本文（スマホは1カラム） */
+/* Layout: 夜の砂漠（濃い表紙・パララックス）→ 流れる文字の帯 → 生成り色の本文に角丸カード。単一の見た目（表紙は常に夜、本文は常に生成り）として色をすべて明示 */
+@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
 :root{
-  --ai:#1c3360;        /* 藍 */
-  --ai-deep:#0f1f3d;
-  --asagi:#2f9fae;     /* 浅葱：線・小要素だけ */
-  --paper:#f6f7f9;
-  --surface:#ffffff;
-  --ink:#18202e; --muted:#566070; --line:#dde2ea; --ai-ink:#1c3360; --on-ai:#ffffff;
-  --f-mincho:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
-  --f-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
-  --f-latin:"Manrope","Helvetica Neue",Arial,sans-serif;
-  --gut-l:max(20px, env(safe-area-inset-left, 0px)); --gut-r:max(20px, env(safe-area-inset-right, 0px));
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#0e1422; --surface:#151d2e; --ink:#e5e9f1; --muted:#9ba5b7; --line:#273149; --ai-ink:#9db6ea; --asagi:#57c2cf; color-scheme:dark;
-}}
-:root[data-theme="dark"]{
-  --paper:#0e1422; --surface:#151d2e; --ink:#e5e9f1; --muted:#9ba5b7; --line:#273149; --ai-ink:#9db6ea; --asagi:#57c2cf; color-scheme:dark;
+  --ink:#141519; --ink2:#1E2026; --soft:#5A5E66; --paper:#FBFAF6; --butter:#FFF6D6; --line:#E6E4DC;
+  --fire:#F2804A; --ember:#EC7D8F; --moon:#F7D774; --sage:#8DC21F; --sky:#379BD7; --eye:#2F7FB3; --on-ink:#F5F3EC;
+  --f-body:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --f-head:"M PLUS Rounded 1c","Noto Sans JP","Hiragino Maru Gothic ProN",sans-serif;
+  --f-en:"Bebas Neue","Arial Narrow",Impact,sans-serif;
+  --f-brush:"Yuji Boku","Yu Mincho","Hiragino Mincho ProN",serif;
+  --gl:max(20px, env(safe-area-inset-left, 0px)); --gr:max(20px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{background:var(--surface);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.9;letter-spacing:.03em}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
-h1,h2,h3{margin:0;text-wrap:balance}
-p{margin:0}
-.wrap{max-width:1080px;margin-inline:auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.95;letter-spacing:.03em;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+h1,h2,h3,p{margin:0}
+.wrap{max-width:1120px;margin-inline:auto;padding-left:var(--gl);padding-right:var(--gr)}
+a{color:inherit}
 
-/* ヘッダー */
-.hd{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.hd .wrap{display:flex;align-items:center;gap:24px;height:64px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
-.mark{width:32px;height:32px;border-radius:6px;background:var(--ai);color:#fff;display:grid;place-items:center;font-family:var(--f-latin);font-weight:800;font-size:13px}
-.logo b{font-family:var(--f-mincho);font-size:17px;font-weight:800;letter-spacing:.08em}
-.nav{display:flex;gap:28px;margin-left:auto;font-size:14px}
-.nav a{text-decoration:none;color:var(--muted)}
-.nav a:hover{color:var(--ai-ink)}
-.nav a:focus-visible,.btn:focus-visible{outline:2px solid var(--asagi);outline-offset:3px}
-@media (max-width:640px){.nav{gap:16px;font-size:13px}}
-@media (max-width:420px){.logo b{display:none}}
+/* ===== 表紙：夜の砂漠 ===== */
+.hero{position:relative;min-height:min(92vh,880px);background:var(--ink);color:var(--on-ink);overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.sky{position:absolute;inset:0;background:radial-gradient(120% 70% at 72% 78%,rgba(242,128,74,.22),transparent 60%),linear-gradient(#0d0e12 0%,#141519 45%,#231d1c 100%)}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.55;animation:tw 4s ease-in-out infinite}
+.scene{position:absolute;inset:0;width:100%;height:100%}
+.layer{position:absolute;inset:0;will-change:transform}
+.layer svg{position:absolute;left:0;bottom:0;width:100%;height:100%}
+.man{transform-box:fill-box;transform-origin:50% 100%;animation:rise 1.4s cubic-bezier(.2,.8,.2,1) .2s both}
+.halo{animation:glow 5s ease-in-out infinite}
+.ember{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--fire);box-shadow:0 0 8px 2px rgba(242,128,74,.6);opacity:0;animation:ember 6s linear infinite}
+.topbar{position:absolute;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:3}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--on-ink)}
+.logo svg{width:34px;height:34px}
+.logo b{font:900 18px var(--f-head);letter-spacing:.06em}
+.topbar nav{display:flex;gap:22px;font:400 17px var(--f-en);letter-spacing:.18em}
+.topbar nav a{text-decoration:none;color:rgba(245,243,236,.75)}
+.topbar nav a:hover{color:var(--moon)}
+.hero .wrap.copy{position:relative;z-index:2;padding-top:110px;padding-bottom:130px}
+.kicker{font:400 18px var(--f-en);letter-spacing:.32em;color:var(--moon);animation:in 1s .3s both}
+.slogan{margin-top:20px;font:900 clamp(34px,6vw,76px)/1.35 var(--f-head);letter-spacing:.04em;background:linear-gradient(90deg,#FFE7A8,#fff 45%,#FFC7A6);-webkit-background-clip:text;background-clip:text;color:transparent;animation:in 1.1s .5s both;max-width:13em}
+.lead{margin-top:22px;max-width:30em;color:rgba(245,243,236,.82);font-size:16px;animation:in 1s .75s both}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;animation:in 1s .95s both}
+.tags span{font:400 16px var(--f-en);letter-spacing:.2em;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 16px 4px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);background:rgba(255,255,255,.05)}
+.scroll{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:2;font:400 14px var(--f-en);letter-spacing:.35em;color:rgba(245,243,236,.6);text-align:center}
+.scroll::after{content:"";display:block;width:1px;height:34px;margin:6px auto 0;background:linear-gradient(var(--moon),transparent);animation:drop 2s ease-in-out infinite}
 
-/* 表紙 */
-.hero{background:var(--ai-deep);color:var(--on-ai);position:relative;overflow:hidden}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hero .wrap{position:relative;padding-top:88px;padding-bottom:92px}
-.hero .en{font-family:var(--f-latin);font-weight:700;font-size:12px;letter-spacing:.28em;color:#a9c4e8;display:flex;align-items:center;gap:12px}
-.hero .en::before{content:"";width:28px;height:1px;background:var(--asagi)}
-.hero h1{font-family:var(--f-mincho);font-weight:800;font-size:clamp(30px,5vw,54px);line-height:1.45;letter-spacing:.08em;margin-top:22px}
-.hero p{margin-top:24px;max-width:32em;color:#d6e0ef;font-size:15px}
+/* 流れる文字 */
+.mq{background:var(--ink);border-top:1px solid #2C2F37;border-bottom:1px solid #2C2F37;overflow:hidden;white-space:nowrap}
+.mqi{display:inline-block;font:400 64px/1.5 var(--f-en);letter-spacing:.08em;color:transparent;-webkit-text-stroke:1.2px #FFE7A8;animation:mq 45s linear infinite;padding:4px 0}
+.mqi i{font-style:normal;color:var(--fire);-webkit-text-stroke:0;margin:0 .45em}
 
-/* セクション */
-.sec{padding-block:96px}
-.sec.alt{background:var(--paper)}
-.sec .wrap{display:grid;grid-template-columns:72px minmax(0,1fr);gap:40px}
-.tag{writing-mode:vertical-rl;font-family:var(--f-mincho);font-weight:800;font-size:20px;letter-spacing:.4em;color:var(--ai-ink);display:flex;align-items:center;gap:16px;align-self:start}
-.tag small{font-family:var(--f-latin);font-size:11px;font-weight:700;letter-spacing:.24em;color:var(--asagi)}
-.tag::after{content:"";width:1px;height:56px;background:var(--line)}
-.body{min-width:0}
-@media (max-width:860px){
-  .sec{padding-block:64px}
-  .sec .wrap{grid-template-columns:1fr;gap:24px}
-  .tag{writing-mode:horizontal-tb;font-size:16px;letter-spacing:.2em}
-  .tag::after{width:40px;height:1px}
-}
+/* 目次 */
+.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(251,250,246,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+.toc a{flex:none;text-decoration:none;color:var(--ink);font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px;transition:background .2s,color .2s}
+.toc a:hover,.toc a.on{background:var(--ink);color:var(--on-ink)}
+.toc a:focus-visible,.btn:focus-visible{outline:2px solid var(--fire);outline-offset:3px}
+
+/* 共通 */
+section.sec{padding-block:110px}
+section.alt{background:var(--butter)}
+.eye{font:400 17px var(--f-en);letter-spacing:.3em;color:var(--eye);margin:0 0 10px}
+h2{font:900 clamp(26px,3.6vw,40px)/1.45 var(--f-head);letter-spacing:.04em}
+.h2rule{display:block;width:44px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--fire),var(--moon));margin-top:18px}
+.intro{margin-top:20px;max-width:38em;color:var(--soft)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+
+/* 由来 */
+.origin{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center;margin-top:48px}
+.brush{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:28px;background:var(--ink);display:grid;place-items:center;overflow:hidden}
+.brush .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 1.6s cubic-bezier(.7,0,.2,1) .2s;display:grid;place-items:center;width:100%;height:100%}
+.brush.on .wipe{clip-path:inset(0 0 0 0)}
+.brush .k{font:400 clamp(150px,22vw,260px)/1 var(--f-brush);color:var(--on-ink);text-shadow:0 0 40px rgba(242,128,74,.45)}
+.brush .cap{position:absolute;left:22px;bottom:18px;font:400 15px var(--f-en);letter-spacing:.3em;color:var(--moon)}
+.brush .glow{position:absolute;width:60%;height:60%;border-radius:50%;background:radial-gradient(circle,rgba(242,128,74,.35),transparent 70%);animation:glow 5s ease-in-out infinite}
+.origin p+p{margin-top:18px}
+.origin .big{font:900 clamp(20px,2.2vw,26px)/1.7 var(--f-head);letter-spacing:.04em}
+.mk{background:linear-gradient(transparent 62%,rgba(247,215,116,.75) 62%);padding:0 2px}
+
+/* 考え方 */
+.pvm{margin-top:48px;display:grid;gap:18px}
+.pv{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;align-items:center;background:#fff;border-radius:24px;padding:26px 30px;box-shadow:0 1px 0 var(--line),0 14px 34px rgba(20,21,25,.06)}
+.pv .en{font:400 34px var(--f-en);letter-spacing:.16em;color:var(--c)}
+.pv .ja{font-size:12px;color:var(--soft);display:block;letter-spacing:.1em}
+.pv p{font:900 clamp(20px,2.4vw,28px)/1.55 var(--f-head);letter-spacing:.04em}
+
+/* 大切にしていること */
+.values{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+.card{position:relative;display:flex;flex-direction:column;gap:10px;background:#fff;border-radius:22px;padding:24px 24px 22px;box-shadow:0 1px 0 var(--line),0 10px 24px rgba(20,21,25,.05);transition:transform .25s,box-shadow .25s}
+.card::before{content:"";position:absolute;inset:0;border-radius:22px;padding:2px;background:conic-gradient(from var(--a),var(--ember),var(--moon),var(--fire),var(--sky),var(--ember));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,21,25,.12)}
+.card:hover::before{opacity:1;animation:spin 3s linear infinite}
+.card .num{font:400 15px var(--f-en);letter-spacing:.25em;color:var(--c)}
+.card h3{font:900 21px/1.5 var(--f-head);letter-spacing:.04em}
+.card p{font-size:14px;color:var(--soft);line-height:1.85}
+.card .dot{width:42px;height:42px;border-radius:14px;background:color-mix(in srgb,var(--c) 18%,#fff);display:grid;place-items:center}
+.card .dot i{width:14px;height:14px;border-radius:50%;background:var(--c);box-shadow:0 0 0 6px color-mix(in srgb,var(--c) 22%,transparent)}
+
+/* 輪 */
+.ring{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;margin-top:40px}
+.ringsvg{width:100%;max-width:520px;height:auto;justify-self:center}
+.ringsvg .pulse{transform-origin:260px 260px;animation:pulse 6s ease-out infinite;opacity:0}
+.ringsvg .spin{transform-origin:260px 260px;animation:rot 70s linear infinite}
+.ringsvg .core{animation:glow 4s ease-in-out infinite;transform-origin:260px 260px}
+.ring ul{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:12px}
+.ring li{display:flex;gap:12px;align-items:baseline}
+.ring li b{font:400 18px var(--f-en);letter-spacing:.2em;color:var(--fire);min-width:7.5em}
 
 /* 事業内容 */
-.biz{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ai)}
-.biz article{padding:28px 26px 30px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:12px;min-width:0}
-.biz article:last-child{border-right:0}
-.biz .en{font-family:var(--f-latin);font-weight:700;font-size:12px;letter-spacing:.2em;color:var(--asagi)}
-.biz h3{font-family:var(--f-mincho);font-weight:800;font-size:21px;letter-spacing:.06em;line-height:1.5}
-.biz p{color:var(--muted);font-size:15px}
-@media (max-width:900px){.biz{grid-template-columns:1fr}.biz article{border-right:0;border-bottom:1px solid var(--line);padding-inline:0}}
+.biz{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:20px}
+.biz .thumb{height:110px;border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--c) 22%,#fff),color-mix(in srgb,var(--c) 6%,#F7F5EF));display:flex;align-items:flex-end;padding:12px 16px;font:400 30px/1 var(--f-en);letter-spacing:.1em;color:color-mix(in srgb,var(--c) 75%,#141519)}
 
 /* 会社概要 */
-.co{display:grid;grid-template-columns:140px minmax(0,1fr);border-top:1px solid var(--ink);margin:0}
-.co dt,.co dd{padding:20px 4px;border-bottom:1px solid var(--line);margin:0}
-.co dt{font-weight:700;font-size:14px;color:var(--muted)}
-.co dd{font-size:15px}
+.co{margin-top:40px;display:grid;grid-template-columns:150px minmax(0,1fr);background:#fff;border-radius:24px;padding:10px 30px;box-shadow:0 1px 0 var(--line),0 14px 34px rgba(20,21,25,.06)}
+.co dt,.co dd{margin:0;padding:20px 4px;border-bottom:1px solid var(--line)}
+.co dt:last-of-type,.co dd:last-of-type{border-bottom:0}
+.co dt{font-weight:700;font-size:14px;color:var(--soft)}
 .co .ppl{display:grid;grid-template-columns:auto 1fr;gap:4px 18px}
-.co .ppl span:nth-child(odd){color:var(--muted);font-family:var(--f-latin);font-size:13px;letter-spacing:.08em;padding-top:2px}
-.co .maplink{display:inline-flex;margin-top:6px;font-size:13px;color:var(--ai-ink)}
-@media (max-width:640px){.co{grid-template-columns:1fr}.co dt{padding-bottom:0;border-bottom:0}}
+.co .ppl span:nth-child(odd){font:400 16px var(--f-en);letter-spacing:.2em;color:var(--eye);padding-top:3px}
+.co .map{font-size:13px;color:var(--eye)}
 
 /* お問い合わせ */
-.lead{color:var(--muted);margin-bottom:28px}
-form{max-width:720px;display:grid;gap:18px}
+.contact{background:var(--ink);color:var(--on-ink);padding-block:110px;position:relative;overflow:hidden}
+.contact .eye{color:var(--moon)}
+.contact .intro{color:rgba(245,243,236,.75)}
+.contact .glowbg{position:absolute;right:-10%;bottom:-40%;width:60%;aspect-ratio:1;max-width:100%;border-radius:50%;background:radial-gradient(circle,rgba(242,128,74,.25),transparent 65%);pointer-events:none}
+form{position:relative;margin-top:40px;max-width:760px;display:grid;gap:18px;background:#fff;color:var(--ink);border-radius:24px;padding:32px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700}
-label .req{display:inline-block;font-size:11px;color:#fff;background:var(--ai);border-radius:2px;padding:0 6px;margin-left:6px;font-weight:500;vertical-align:1px}
-input,select,textarea{font:inherit;font-weight:400;font-size:15px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:11px 12px;width:100%}
+.req{display:inline-block;font-size:11px;color:#fff;background:var(--fire);border-radius:999px;padding:0 8px;margin-left:6px;font-weight:500;vertical-align:1px}
+input,select,textarea{font:inherit;font-weight:400;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
 textarea{min-height:150px;resize:vertical}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--asagi);outline-offset:0;border-color:var(--asagi)}
-.btn{justify-self:start;display:inline-flex;align-items:center;gap:10px;font:inherit;font-weight:700;font-size:15px;letter-spacing:.08em;border:0;border-radius:4px;padding:13px 32px;background:var(--ai);color:#fff;cursor:pointer}
-.btn:hover{background:var(--ai-deep)}
-.formnote{font-size:13px;color:var(--muted)}
-.sent{border-left:3px solid var(--asagi);padding:10px 14px;background:var(--surface);font-size:14px}
-@media (max-width:640px){.row2{grid-template-columns:1fr}}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--fire);outline-offset:0;border-color:var(--fire)}
+.btn{justify-self:start;display:inline-flex;align-items:center;gap:12px;font:900 16px var(--f-head);letter-spacing:.08em;border:0;border-radius:999px;padding:14px 30px;background:var(--ink);color:var(--on-ink);cursor:pointer}
+.btn span{transition:transform .2s}
+.btn:hover span{transform:translateX(4px)}
+.formnote{font-size:13px;color:var(--soft)}
+.sent{border-left:3px solid var(--fire);padding:10px 14px;background:var(--paper);border-radius:0 10px 10px 0;font-size:14px}
 
 /* フッター */
-.ft{background:var(--ai-deep);color:#c3cee0;padding-block:40px;font-size:13px}
-.ft .wrap{display:flex;flex-wrap:wrap;gap:16px 48px;align-items:flex-end;justify-content:space-between}
-.ft .logo{color:#fff}
-.ft .mark{background:#fff;color:var(--ai-deep)}
+.ft{background:var(--ink);color:rgba(245,243,236,.7);border-top:1px solid #2C2F37;padding-block:44px;font-size:13px}
+.ft .wrap{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:flex-end;justify-content:space-between}
 .ft address{font-style:normal;margin-top:12px}
-.ft small{font-family:var(--f-latin);letter-spacing:.12em}
+.ft small{font:400 15px var(--f-en);letter-spacing:.25em}
+
+@keyframes tw{50%{opacity:.1}}
+@keyframes rise{from{opacity:0;transform:translateY(80px)}}
+@keyframes in{from{opacity:0;transform:translateY(16px)}}
+@keyframes glow{50%{opacity:.55}}
+@keyframes ember{0%{opacity:0;transform:translate(0,0)}15%{opacity:.9}100%{opacity:0;transform:translate(var(--dx),-340px)}}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(5.5);opacity:0}}
+@keyframes rot{to{transform:rotate(360deg)}}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes spin{to{--a:360deg}}
+@keyframes drop{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+
+@media (max-width:860px){
+  .topbar nav{display:none}
+  .origin,.ring{grid-template-columns:1fr;gap:32px}
+  .pv{grid-template-columns:1fr;gap:6px;padding:22px}
+  .co{grid-template-columns:1fr;padding:6px 20px}
+  .co dt{padding-bottom:0;border-bottom:0}
+  .row2{grid-template-columns:1fr}
+  form{padding:22px}
+  section.sec,.contact{padding-block:76px}
+  .mqi{font-size:44px}
+  .hero .scene{opacity:.6}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .brush .wipe{clip-path:none}
+}
 </style>
 
 </head>
 <body>
-<header class="hd">
-  <div class="wrap">
-    <a class="logo" href="#top"><span class="mark">BM</span><b>株式会社BM</b></a>
-    <nav class="nav" aria-label="ページ内">
-      <a href="#business">事業内容</a><a href="#company">会社概要</a><a href="#contact">お問い合わせ</a>
-    </nav>
+<header class="hero" id="top">
+  <div class="sky" id="sky"></div>
+  <div class="scene" aria-hidden="true">
+    <div class="layer" data-d="8"><svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice"><polygon points="0,560 140,470 260,515 420,430 600,505 760,445 920,500 1100,420 1260,490 1440,450 1440,800 0,800" fill="#1C1E24"/></svg></div>
+    <div class="layer" data-d="14"><svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice">
+      <g fill="none" stroke="#5A5E66" stroke-width="2" opacity=".8"><path d="M300 588 L300 540 L318 512 L336 540 L336 588"/><path d="M290 540 L346 540"/><path d="M318 512 L318 488"/></g>
+      <rect x="0" y="584" width="1440" height="216" fill="#221F1F"/>
+      <defs><filter id="pb" x="-20%" y="-100%" width="140%" height="300%"><feGaussianBlur stdDeviation="24"/></filter></defs><ellipse cx="1050" cy="592" rx="420" ry="46" fill="#F2804A" opacity=".22" filter="url(#pb)" class="halo"/>
+    </svg></div>
+    <div class="layer" data-d="24"><svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice">
+      <defs><filter id="bl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+      <radialGradient id="hg"><stop offset="0" stop-color="#F2804A" stop-opacity=".55"/><stop offset="1" stop-color="#F2804A" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="1050" cy="420" r="230" fill="url(#hg)" class="halo"/>
+      <g class="man">
+        <g fill="none" stroke="#F7D774" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#bl)" opacity=".6">
+          <path d="M960 600 L1140 600 L1110 560 L990 560 Z"/><path d="M1036 560 L1046 470 M1064 560 L1054 470 M1050 470 L1050 380 M1050 400 L995 330 M1050 400 L1105 330"/><path d="M1050 372 L1066 352 L1050 332 L1034 352 Z"/>
+        </g>
+        <g fill="none" stroke="#FFE7A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M960 600 L1140 600 L1110 560 L990 560 Z"/><path d="M990 560 L1050 600 L1110 560 M1020 560 L1020 600 M1080 560 L1080 600"/>
+          <path d="M1036 560 L1046 470 M1064 560 L1054 470 M1050 470 L1050 380 M1040 445 L1060 425 M1040 425 L1060 445"/>
+          <path d="M1050 400 L995 330 M1050 400 L1105 330 M995 330 L990 300 M1105 330 L1110 300"/>
+          <path d="M1050 372 L1066 352 L1050 332 L1034 352 Z"/>
+        </g>
+      </g>
+    </svg></div>
+    <div class="layer" data-d="40"><svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice"><path d="M0 700 Q 240 650 480 688 T 960 676 T 1440 690 V800 H0 Z" fill="#141519"/><path d="M0 736 Q 360 700 720 730 T 1440 724 V800 H0 Z" fill="#0F1014"/></svg></div>
+    <div id="embers"></div>
   </div>
+  <div class="topbar"><div class="wrap">
+    <a class="logo" href="#top" aria-label="株式会社BM"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#F2804A"/><path d="M12 30h16M20 30V17M20 21l-7-7M20 21l7-7M20 15l3-3-3-3-3 3z" stroke="#141519" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><b>株式会社BM</b></a>
+    <nav aria-label="主なページ"><a href="#origin">ORIGIN</a><a href="#philosophy">PHILOSOPHY</a><a href="#business">BUSINESS</a><a href="#contact">CONTACT</a></nav>
+  </div></div>
+  <div class="wrap copy">
+    <p class="kicker">BM INC. ／ FUKUOKA, HAKATA</p>
+    <h1 class="slogan">ひとりの火を、<br>みんなの灯りに。</h1>
+    <p class="lead">それぞれが自分の力を持ち、持ち寄り、助け合う。<br>そんな共同体から、幸せになる人を増やしていきます。</p>
+    <div class="tags"><span>AI</span><span>SOFTWARE</span><span>DESIGN</span><span>CONSULTING</span></div>
+  </div>
+  <p class="scroll">SCROLL</p>
 </header>
 
-<section class="hero" id="top">
-  <canvas id="asanoha" aria-hidden="true"></canvas>
+<div class="mq" aria-hidden="true"><span class="mqi">BURN BRIGHT<i>●</i>BUILD TOGETHER<i>●</i>GIVE FIRST<i>●</i>EVERYONE PARTICIPATES<i>●</i>LEAVE IT BETTER<i>●</i>BURN BRIGHT<i>●</i>BUILD TOGETHER<i>●</i>GIVE FIRST<i>●</i>EVERYONE PARTICIPATES<i>●</i>LEAVE IT BETTER<i>●</i></span></div>
+
+<nav class="toc" aria-label="目次"><div class="wrap">
+  <a href="#origin">社名の由来</a><a href="#philosophy">考え方</a><a href="#values">大切にしていること</a><a href="#circle">火を囲む輪</a><a href="#business">事業内容</a><a href="#company">会社概要</a><a href="#contact">お問い合わせ</a>
+</div></nav>
+
+<section class="sec" id="origin">
   <div class="wrap">
-    <p class="en">BM INC.</p>
-    <h1>AIとITで、<br>事業の次の一歩を。</h1>
+    <p class="eye rv">ORIGIN</p>
+    <h2 class="rv">社名の由来</h2><span class="h2rule rv"></span>
+    <div class="origin">
+      <div class="brush rv" id="brush"><div class="glow"></div><div class="wipe"><span class="k">火</span></div><span class="cap">BURNING MAN</span></div>
+      <div>
+        <p class="big rv">BMという名前は、アメリカ・ネバダ州の砂漠で毎年開かれる<span class="mk">「バーニングマン」</span>から来ています。</p>
+        <p class="rv">何もない砂漠に人が集まり、一人ひとりが持ち寄った力でひとつの街をつくる。そして最後は、跡を残さずに去っていく。そこに観客はいません。全員がつくり手で、互いに助け合っています。</p>
+        <p class="rv">私たちも、そんな共同体でありたいと考えています。それぞれが自分の力を持ち、持ち寄り、助け合う。その輪の中で、幸せになる人を一人でも増やしていく。BMという名前には、その想いを込めました。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="philosophy">
+  <div class="wrap">
+    <p class="eye rv">PHILOSOPHY</p>
+    <h2 class="rv">考え方</h2><span class="h2rule rv"></span>
+    <div class="pvm">
+      <div class="pv rv" style="--c:var(--fire)"><span class="en">PURPOSE<span class="ja">存在する理由</span></span><p>幸せになる人を、増やす。</p></div>
+      <div class="pv rv" style="--c:var(--eye)"><span class="en">VISION<span class="ja">目指す姿</span></span><p>それぞれが力を持ち、助け合う共同体をつくる。</p></div>
+      <div class="pv rv" style="--c:#7FA01A"><span class="en">MISSION<span class="ja">果たすこと</span></span><p>テクノロジーと表現で、一人ひとりの力に火をつける。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="values">
+  <div class="wrap">
+    <p class="eye rv">VALUES</p>
+    <h2 class="rv">大切にしていること</h2><span class="h2rule rv"></span>
+    <p class="intro rv">砂漠の街から学んだ、5つの考え方です。</p>
+    <div class="values">
+      <article class="card rv" style="--c:var(--fire)"><span class="dot"><i></i></span><span class="num">01 / SELF-RELIANCE</span><h3>自分の火を持つ</h3><p>誰かを待つ前に、自分の足で立つ。一人ひとりが、自分の役割に責任を持ちます。</p></article>
+      <article class="card rv" style="--c:var(--sky)"><span class="dot"><i></i></span><span class="num">02 / COMMUNAL EFFORT</span><h3>力を持ち寄る</h3><p>一人ではつくれないものを、みんなでつくる。違う力が集まるほど、できることは広がります。</p></article>
+      <article class="card rv" style="--c:var(--ember)"><span class="dot"><i></i></span><span class="num">03 / GIFTING</span><h3>まず、与える</h3><p>見返りを求める前に、自分にできることを差し出す。信頼は、そこから始まります。</p></article>
+      <article class="card rv" style="--c:#7FA01A"><span class="dot"><i></i></span><span class="num">04 / PARTICIPATION</span><h3>全員がつくり手</h3><p>見ているだけの人はいない。関わる人みんなで手を動かし、同じ側に立って考えます。</p></article>
+      <article class="card rv" style="--c:#C9A227"><span class="dot"><i></i></span><span class="num">05 / LEAVE IT BETTER</span><h3>来たときより、美しく</h3><p>関わった場所を、前より良い状態で次の人へ手渡す。それが、私たちの仕事の終わり方です。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="circle">
+  <div class="wrap">
+    <p class="eye rv">CIRCLE</p>
+    <h2 class="rv">火を囲む輪</h2><span class="h2rule rv"></span>
+    <div class="ring">
+      <svg class="ringsvg rv" viewBox="0 0 520 520" role="img" aria-label="中心の火を、それぞれの灯りを持った人の輪が囲む図">
+        <defs><radialGradient id="cg"><stop offset="0" stop-color="#F7D774"/><stop offset=".55" stop-color="#F2804A"/><stop offset="1" stop-color="#F2804A" stop-opacity="0"/></radialGradient></defs>
+        <circle cx="260" cy="260" r="44" fill="none" stroke="#F2804A" stroke-width="2" class="pulse"/>
+        <circle cx="260" cy="260" r="44" fill="none" stroke="#F2804A" stroke-width="2" class="pulse" style="animation-delay:2s"/>
+        <circle cx="260" cy="260" r="44" fill="none" stroke="#F2804A" stroke-width="2" class="pulse" style="animation-delay:4s"/>
+        <circle cx="260" cy="260" r="190" fill="none" stroke="#E6E4DC" stroke-width="2" stroke-dasharray="4 10"/>
+        <g class="spin" id="people"></g>
+        <circle cx="260" cy="260" r="70" fill="url(#cg)" class="core"/>
+        <text x="260" y="268" text-anchor="middle" font-family="Yuji Boku, serif" font-size="34" fill="#141519">火</text>
+      </svg>
+      <div>
+        <p class="big rv" style="font:900 clamp(20px,2.2vw,26px)/1.7 var(--f-head)">中心に立つ会社ではなく、<br>火を囲む輪のひとりでありたい。</p>
+        <p class="rv" style="margin-top:16px">お客様、仲間、地域の人たち。それぞれが自分の灯りを持ち寄るほど、輪の真ん中は明るくなります。私たちは、その火を絶やさないために、技術とデザインと知恵を持ち寄ります。</p>
+        <ul class="rv">
+          <li><b>CUSTOMERS</b><span>同じ側に立って、課題を一緒に解く</span></li>
+          <li><b>PARTNERS</b><span>得意な力を持ち寄り、ひとりでは届かない所へ</span></li>
+          <li><b>COMMUNITY</b><span>福岡・博多から、関わる人を増やしていく</span></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="sec" id="business">
   <div class="wrap">
-    <h2 class="tag"><small>BUSINESS</small>事業内容</h2>
-    <div class="body">
-      <div class="biz">
-        <article><span class="en">AI SERVICE</span><h3>AIサービス事業</h3><p>AI技術を活用したサービスの企画、開発、提供</p></article>
-        <article><span class="en">IT SERVICE</span><h3>ITサービス事業</h3><p>業務システム、Webサイト、アプリケーションの企画、開発、運用保守</p></article>
-        <article><span class="en">CONSULTING</span><h3>ビジネスコンサルティング事業</h3><p>業務改善およびIT・AI導入に関する調査、計画立案、実行支援</p></article>
-      </div>
+    <p class="eye rv">BUSINESS</p>
+    <h2 class="rv">事業内容</h2><span class="h2rule rv"></span>
+    <div class="biz">
+      <article class="card rv" style="--c:var(--fire)"><div class="thumb">AI ＆ SOFTWARE</div><h3>AI・ソフトウェア</h3><p>AIを活用したアプリケーションやクラウドサービスの企画、開発、提供。</p></article>
+      <article class="card rv" style="--c:var(--sky)"><div class="thumb">DX SUPPORT</div><h3>業務改善・DXの支援</h3><p>業務の効率化やデジタル化、システム導入の支援とコンサルティング。</p></article>
+      <article class="card rv" style="--c:var(--ember)"><div class="thumb">DESIGN ＆ CONTENT</div><h3>デザイン・コンテンツ</h3><p>ロゴ、Webサイト、印刷物などのデザイン。映像・動画、書籍・出版物の企画と制作。</p></article>
+      <article class="card rv" style="--c:#7FA01A"><div class="thumb">MARKETING</div><h3>マーケティング・販売支援</h3><p>広告・宣伝・マーケティングの企画と制作、営業代行や販売代理などの支援。</p></article>
     </div>
   </div>
 </section>
 
 <section class="sec alt" id="company">
   <div class="wrap">
-    <h2 class="tag"><small>COMPANY</small>会社概要</h2>
-    <div class="body">
-      <dl class="co">
-        <dt>会社名</dt><dd>株式会社BM</dd>
-        <dt>所在地</dt><dd>〒812-0024<br>福岡県福岡市博多区綱場町6-9 プログレススペースⅡ 5F<br><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8C%BA%E7%B6%B1%E5%A0%B4%E7%94%BA6-9" target="_blank" rel="noopener">Googleマップで見る</a></dd>
-        <dt>代表者</dt><dd>代表取締役社長　コムギ</dd>
-        <dt>役員</dt><dd><div class="ppl"><span>CFO</span><span>小川 拓郎</span><span>CTO</span><span>山内 北斗</span></div></dd>
-        <dt>事業内容</dt><dd>AIサービス事業<br>ITサービス事業<br>ビジネスコンサルティング事業</dd>
-      </dl>
-    </div>
+    <p class="eye rv">COMPANY</p>
+    <h2 class="rv">会社概要</h2><span class="h2rule rv"></span>
+    <dl class="co rv">
+      <dt>会社名</dt><dd>株式会社BM</dd>
+      <dt>所在地</dt><dd>〒812-0024<br>福岡県福岡市博多区綱場町6-9 プログレススペースⅡ 5F<br><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8C%BA%E7%B6%B1%E5%A0%B4%E7%94%BA6-9" target="_blank" rel="noopener">Googleマップで見る</a></dd>
+      <dt>代表者</dt><dd>代表取締役社長　コムギ</dd>
+      <dt>役員</dt><dd><div class="ppl"><span>CFO</span><span>小川 拓郎</span><span>CTO</span><span>山内 北斗</span></div></dd>
+      <dt>事業内容</dt><dd>AI・ソフトウェアの企画、開発、提供<br>業務改善・DXの支援<br>デザイン・コンテンツの制作<br>マーケティング・販売支援</dd>
+    </dl>
   </div>
 </section>
 
-<section class="sec" id="contact">
-  <div class="wrap">
-    <h2 class="tag"><small>CONTACT</small>お問い合わせ</h2>
-    <div class="body">
-      <p class="lead">お問い合わせは、以下のフォームよりお送りください。内容を確認のうえ、担当者よりご連絡いたします。</p>
-      <form id="cf" novalidate>
-        <div class="row2">
-          <label for="c-co">会社名<input id="c-co" name="company" type="text" autocomplete="organization"></label>
-          <label for="c-name"><span>お名前<span class="req">必須</span></span><input id="c-name" name="name" type="text" autocomplete="name" required></label>
-        </div>
-        <div class="row2">
-          <label for="c-mail"><span>メールアドレス<span class="req">必須</span></span><input id="c-mail" name="email" type="email" autocomplete="email" required></label>
-          <label for="c-tel">電話番号<input id="c-tel" name="tel" type="tel" autocomplete="tel"></label>
-        </div>
-        <label for="c-topic">お問い合わせの種類
-          <select id="c-topic" name="topic"><option>AIサービスについて</option><option>ITサービスについて</option><option>ビジネスコンサルティングについて</option><option>その他</option></select>
-        </label>
-        <label for="c-msg"><span>お問い合わせ内容<span class="req">必須</span></span><textarea id="c-msg" name="message" required></textarea></label>
-        <button class="btn" type="submit">送信する</button>
-        <p class="formnote" id="c-note">いただいた個人情報は、お問い合わせへの回答のみに使用します。</p>
-      </form>
-    </div>
+<section class="contact" id="contact">
+  <div class="glowbg"></div>
+  <div class="wrap" style="position:relative">
+    <p class="eye rv">CONTACT</p>
+    <h2 class="rv">お問い合わせ</h2><span class="h2rule rv"></span>
+    <p class="intro rv">お問い合わせは、以下のフォームよりお送りください。内容を確認のうえ、担当者よりご連絡いたします。</p>
+    <form id="cf" class="rv" novalidate>
+      <div class="row2">
+        <label for="c-co">会社名<input id="c-co" name="company" type="text" autocomplete="organization"></label>
+        <label for="c-name"><span>お名前<span class="req">必須</span></span><input id="c-name" name="name" type="text" autocomplete="name" required></label>
+      </div>
+      <div class="row2">
+        <label for="c-mail"><span>メールアドレス<span class="req">必須</span></span><input id="c-mail" name="email" type="email" autocomplete="email" required></label>
+        <label for="c-tel">電話番号<input id="c-tel" name="tel" type="tel" autocomplete="tel"></label>
+      </div>
+      <label for="c-topic">お問い合わせの種類
+        <select id="c-topic" name="topic"><option>AI・ソフトウェアについて</option><option>業務改善・DXの支援について</option><option>デザイン・コンテンツについて</option><option>マーケティング・販売支援について</option><option>その他</option></select>
+      </label>
+      <label for="c-msg"><span>お問い合わせ内容<span class="req">必須</span></span><textarea id="c-msg" name="message" required></textarea></label>
+      <button class="btn" type="submit">送信する<span>→</span></button>
+      <p class="formnote" id="c-note">いただいた個人情報は、お問い合わせへの回答のみに使用します。</p>
+    </form>
   </div>
 </section>
 
 <footer class="ft">
   <div class="wrap">
     <div>
-      <a class="logo" href="#top"><span class="mark">BM</span><b>株式会社BM</b></a>
+      <a class="logo" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#F2804A"/><path d="M12 30h16M20 30V17M20 21l-7-7M20 21l7-7M20 15l3-3-3-3-3 3z" stroke="#141519" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><b>株式会社BM</b></a>
       <address>〒812-0024 福岡県福岡市博多区綱場町6-9 プログレススペースⅡ 5F</address>
     </div>
-    <small>© 2026 BM Inc.</small>
+    <small>© 2026 BM INC.</small>
   </div>
 </footer>
 
 <script>
-/* 表紙の麻の葉文様：三角格子の各三角形に、頂点から重心への線を引く */
 (function(){
-  var cv=document.getElementById('asanoha'),ctx=cv.getContext('2d');
-  function draw(){
-    var r=cv.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);
-    cv.width=Math.round(r.width*dpr);cv.height=Math.round(r.height*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,r.width,r.height);
-    var s=r.width<700?44:60,h=s*Math.sqrt(3)/2,rows=Math.ceil(r.height/h)+2,cols=Math.ceil(r.width/s)+3;
-    ctx.beginPath();
-    function tri(a,b,c){var gx=(a[0]+b[0]+c[0])/3,gy=(a[1]+b[1]+c[1])/3;
-      ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.lineTo(c[0],c[1]);ctx.closePath();
-      [a,b,c].forEach(function(p){ctx.moveTo(p[0],p[1]);ctx.lineTo(gx,gy)});}
-    for(var j=-1;j<rows;j++){
-      var y=j*h,x0=(j&1?s/2:0)-s;
-      for(var i=0;i<cols;i++){var x=x0+i*s;tri([x,y],[x+s,y],[x+s/2,y+h]);tri([x+s/2,y+h],[x+s*1.5,y+h],[x+s,y]);}
-    }
-    ctx.lineWidth=1;ctx.strokeStyle='rgba(160,195,235,.22)';ctx.stroke();
-    ctx.globalCompositeOperation='destination-in';
-    var g=ctx.createLinearGradient(0,0,r.width,0);
-    g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(.45,'rgba(0,0,0,.06)');g.addColorStop(1,'rgba(0,0,0,1)');
-    ctx.fillStyle=g;ctx.fillRect(0,0,r.width,r.height);
-    ctx.globalCompositeOperation='source-over';
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* 星 */
+  var sky=document.getElementById('sky');
+  for(var i=0;i<70;i++){var s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*58+'%';s.style.animationDelay=(Math.random()*4)+'s';if(Math.random()<.2){s.style.width=s.style.height='2px'}sky.appendChild(s)}
+  /* 火の粉 */
+  var em=document.getElementById('embers');
+  for(var k=0;k<26;k++){var e=document.createElement('i');e.className='ember';e.style.left=(66+Math.random()*16)+'%';e.style.top=(52+Math.random()*16)+'%';e.style.animationDelay=(Math.random()*6)+'s';e.style.animationDuration=(4+Math.random()*4)+'s';e.style.setProperty('--dx',(Math.random()*80-40)+'px');if(Math.random()<.4)e.style.background='#F7D774';em.appendChild(e)}
+  /* 輪の人 */
+  var g=document.getElementById('people'),cols=['#F2804A','#379BD7','#EC7D8F','#8DC21F','#F7D774'],out='';
+  for(var n=0;n<12;n++){var a=n/12*Math.PI*2,x=260+190*Math.cos(a),y=260+190*Math.sin(a),c=cols[n%5];out+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="18" fill="'+c+'" fill-opacity=".18"/><circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="7" fill="'+c+'"/><line x1="'+x.toFixed(1)+'" y1="'+y.toFixed(1)+'" x2="'+(260+80*Math.cos(a)).toFixed(1)+'" y2="'+(260+80*Math.sin(a)).toFixed(1)+'" stroke="'+c+'" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="2 6"/>'}
+  g.innerHTML=out;
+  /* スマホでは絵の右側（人の像）が見えるよう表示範囲をずらす */
+  if(innerWidth<860){[].forEach.call(document.querySelectorAll('.layer svg'),function(v){v.setAttribute('viewBox','560 0 880 800')})}
+  /* パララックス：マウスとスクロール */
+  var ls=[].slice.call(document.querySelectorAll('.layer')),mx=0,my=0,sy=0,tick=false;
+  function paint(){tick=false;ls.forEach(function(l){var d=+l.dataset.d;l.style.transform='translate('+(-mx*d)+'px,'+(-my*d/2+sy*d/90)+'px)'})}
+  function req(){if(!tick){tick=true;requestAnimationFrame(paint)}}
+  if(!reduce){
+    addEventListener('mousemove',function(ev){mx=ev.clientX/innerWidth-.5;my=ev.clientY/innerHeight-.5;req()});
+    addEventListener('scroll',function(){sy=Math.min(scrollY,1200);req()},{passive:true});
   }
-  draw();var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(draw,120)});
+  /* スクロールで表示 */
+  var rv=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target)}})},{threshold:.12});
+    rv.forEach(function(el,i){el.style.transitionDelay=((i%4)*70)+'ms';io.observe(el)});
+  }else rv.forEach(function(el){el.classList.add('on')});
+  /* 目次の現在地 */
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  if('IntersectionObserver' in window){
+    var io2=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+    links.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)io2.observe(t)});
+  }
+  /* お問い合わせ：送信先（Formspree等）未設定の間は「準備中」と表示 */
+  document.getElementById('cf').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var nm=document.getElementById('c-name'),m=document.getElementById('c-mail'),msg=document.getElementById('c-msg'),note=document.getElementById('c-note');
+    var bad=!nm.value.trim()?nm:!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m.value)?m:!msg.value.trim()?msg:null;
+    if(bad){note.className='formnote';note.textContent='お名前、メールアドレス、お問い合わせ内容をご記入ください。';bad.focus();return}
+    note.className='sent';note.textContent='申し訳ありません。お問い合わせフォームは現在準備中のため、送信できません。';
+  });
 })();
-/* お問い合わせ：送信先（Formspree等）未設定の間は「準備中」と表示 */
-document.getElementById('cf').addEventListener('submit',function(e){
-  e.preventDefault();
-  var n=document.getElementById('c-name'),m=document.getElementById('c-mail'),msg=document.getElementById('c-msg'),note=document.getElementById('c-note');
-  var bad=!n.value.trim()?n:!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m.value)?m:!msg.value.trim()?msg:null;
-  if(bad){note.className='formnote';note.textContent='お名前、メールアドレス、お問い合わせ内容をご記入ください。';bad.focus();return}
-  note.className='sent';note.textContent='申し訳ありません。お問い合わせフォームは現在準備中のため、送信できません。';
-});
 </script>
 </body>
 </html>
