@@ -127,6 +127,11 @@ h2{font:900 clamp(26px,3.6vw,40px)/1.45 var(--f-head);letter-spacing:.04em}
 .biz{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:20px}
 .biz .thumb{height:110px;border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--c) 22%,#fff),color-mix(in srgb,var(--c) 6%,#F7F5EF));display:flex;align-items:flex-end;padding:12px 16px;font:400 30px/1 var(--f-en);letter-spacing:.1em;color:color-mix(in srgb,var(--c) 75%,#141519)}
 
+.biz .thumb{overflow:hidden}
+.biz .card.x{grid-column:1/-1;flex-direction:row;align-items:center;gap:24px;background:var(--ink);color:var(--on-ink)}
+.biz .card.x .thumb{flex:none;width:200px;height:90px;background:linear-gradient(135deg,rgba(247,215,116,.22),rgba(242,128,74,.12));color:var(--moon)}
+.biz .card.x p{color:rgba(245,243,236,.72)}
+@media (max-width:600px){.biz .card.x{flex-direction:column;align-items:stretch}.biz .card.x .thumb{width:auto}}
 /* 会社概要 */
 .co{margin-top:40px;display:grid;grid-template-columns:150px minmax(0,1fr);background:#fff;border-radius:24px;padding:10px 30px;box-shadow:0 1px 0 var(--line),0 14px 34px rgba(20,21,25,.06)}
 .co dt,.co dd{margin:0;padding:20px 4px;border-bottom:1px solid var(--line)}
@@ -319,6 +324,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--fire);outline-of
       <article class="card rv" style="--c:var(--sky)"><div class="thumb">DX SUPPORT</div><h3>業務改善・DXの支援</h3><p>業務の効率化やデジタル化、システム導入の支援とコンサルティング。</p></article>
       <article class="card rv" style="--c:var(--ember)"><div class="thumb">DESIGN ＆ CONTENT</div><h3>デザイン・コンテンツ</h3><p>ロゴ、Webサイト、印刷物などのデザイン。映像・動画、書籍・出版物の企画と制作。</p></article>
       <article class="card rv" style="--c:#7FA01A"><div class="thumb">MARKETING</div><h3>マーケティング・販売支援</h3><p>広告・宣伝・マーケティングの企画と制作、営業代行や販売代理などの支援。</p></article>
+      <article class="card rv x" style="--c:var(--moon)"><div class="thumb">PROJECT</div><div><h3>人類補完計画</h3><p>来るべきAI時代に備えた計画。</p></div></article>
     </div>
   </div>
 </section>
@@ -332,7 +338,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--fire);outline-of
       <dt>所在地</dt><dd>〒812-0024<br>福岡県福岡市博多区綱場町6-9 プログレススペースⅡ 5F<br><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8C%BA%E7%B6%B1%E5%A0%B4%E7%94%BA6-9" target="_blank" rel="noopener">Googleマップで見る</a></dd>
       <dt>代表者</dt><dd>代表取締役社長　コムギ</dd>
       <dt>役員</dt><dd><div class="ppl"><span>監査役</span><span>小川 拓郎</span><span>取締役</span><span>山内 北斗</span></div></dd>
-      <dt>事業内容</dt><dd>AI・ソフトウェアの企画、開発、提供<br>業務改善・DXの支援<br>デザイン・コンテンツの制作<br>マーケティング・販売支援</dd>
+      <dt>事業内容</dt><dd>AI・ソフトウェアの企画、開発、提供<br>業務改善・DXの支援<br>デザイン・コンテンツの制作<br>マーケティング・販売支援<br>人類補完計画</dd>
     </dl>
   </div>
 </section>
@@ -353,7 +359,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--fire);outline-of
         <label for="c-tel">電話番号<input id="c-tel" name="tel" type="tel" autocomplete="tel"></label>
       </div>
       <label for="c-topic">お問い合わせの種類
-        <select id="c-topic" name="topic"><option>AI・ソフトウェアについて</option><option>業務改善・DXの支援について</option><option>デザイン・コンテンツについて</option><option>マーケティング・販売支援について</option><option>その他</option></select>
+        <select id="c-topic" name="topic"><option>AI・ソフトウェアについて</option><option>業務改善・DXの支援について</option><option>デザイン・コンテンツについて</option><option>マーケティング・販売支援について</option><option>人類補完計画について</option><option>その他</option></select>
       </label>
       <label for="c-msg"><span>お問い合わせ内容<span class="req">必須</span></span><textarea id="c-msg" name="message" required></textarea></label>
       <button class="btn" type="submit">送信する<span>→</span></button>
